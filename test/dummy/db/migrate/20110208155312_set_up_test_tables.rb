@@ -97,12 +97,17 @@ class SetUpTestTables < ActiveRecord::Migration
     create_table :documents, :force => true do |t|
       t.string :name
     end
-    
+
     create_table :legacy_widgets, :force => true do |t|
       t.string    :name
       t.integer   :version
     end
-  
+
+    create_table :companies, :force => true do |t|
+      t.string :name
+      t.string :address_street
+      t.string :address_city
+    end
   end
 
   def self.down

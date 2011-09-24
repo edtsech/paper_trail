@@ -31,6 +31,13 @@ class HasPaperTrailModelTest < ActiveSupport::TestCase
 
   end
 
+  context 'A record with composed_of' do
+    setup { @company = Company.create }
+
+    should 'respond to "composed_of method"' do
+      assert @company.address
+    end
+  end
 
   context 'A new record' do
     setup { @widget = Widget.new }
